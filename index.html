@@ -1,0 +1,23 @@
+<?doctype html>                                                                    
+<html>                                                                             
+    <body>                                                                         
+        <meta name="viewport" content="width=100%">                                
+        <div id="clock" style="font-size: 18vw;" width="100%"></div>               
+    </body>                                                                        
+    <script>                                                                       
+                                                                                
+        function padTwo(n){                                                     
+            return ("00"+n).slice(-2);                                          
+        }                                                                       
+                                                                                
+        function setTime(){                                                        
+            var clock_div = document.getElementById("clock");                      
+            var now = new Date();                                                  
+            clock_div.innerHTML = padTwo(now.getHours()%12) + ":" + padTwo(now.getMinutes()) + ":" + padTwo(now.getSeconds()) + (now.getHours()%12 == 0 ? " AM" : " PM");
+            setTimeout(setTime, 1000);                                             
+        }                                                                          
+                                                                                   
+        setTime();                                                                 
+                                                                                   
+    </script>                                                                      
+</html>        
